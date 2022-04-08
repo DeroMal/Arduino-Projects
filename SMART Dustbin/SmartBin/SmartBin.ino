@@ -94,6 +94,9 @@ void Sensor() {
 
   long duration = pulseIn(ECHO_PIN, HIGH);
   distance = duration / 29 / 2;
+  if (distance >= 450){
+    distance = 450;
+  }
   if (duration == 0) {
     Serial.println("Warning: no pulse from sensor");
   }
